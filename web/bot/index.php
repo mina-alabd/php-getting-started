@@ -1,109 +1,136 @@
 <?php
-ob_start();
-$API_KEY = "1107009022:AAEAwEsEkUhesKJRULWj9Z7PblHTnIDx_OQ";
-define('API_KEY',$API_KEY);
+
+define('API_KEY', '1107009022:AAEAwEsEkUhesKJRULWj9Z7PblHTnIDx_OQ');
+
 function bot($method,$datas=[]){
-    $ABoWaTaN = http_build_query($datas);
-        $url = "https://api.telegram.org/bot".API_KEY."/".$method."?$ABoWaTaN";
-        $ABoWaTaN_Sy = file_get_contents($url);
-        return json_decode($ABoWaTaN_Sy);
+    $url = "https://api.telegram.org/bot".API_KEY."/".$method;
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,$url);
+    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch,CURLOPT_POSTFIELDS,$datas);
+    $res = curl_exec($ch);
+    if(curl_error($ch)){
+        var_dump(curl_error($ch));
+    }else{
+        return json_decode($res);
+    }
 }
+function sendmessage($chat_id, $text){
+ bot('sendMessage',[
+ 'chat_id'=>$chat_id,
+ 'text'=>$text,
+ 'parse_mode'=>"MarkDown"
+ ]);
+ } 
+function objectToArrays($object)
+    {
+        if (!is_object($object) && !is_array($object)) {
+            return $object;
+        }
+        if (is_object($object)) {
+            $object = get_object_vars($object);
+        }
+        return array_map("objectToArrays", $object);
+    }
+//-//////
 $update = json_decode(file_get_contents('php://input'));
-$message = $update->message;
-$text = $message->text;
+$message = $update->message; 
 $chat_id = $message->chat->id;
-$chat_id2 = $update->callback_query->message->chat->id;
-$message_id = $update->callback_query->message->message_id;
-$data = $update->callback_query->data;
-$name = $message->from->first_name;
-$admin = 495064815; // آيديك
-$chs = "lloveMessages"; // معرف قناتك بدون @ ;
-$from_id = $message->from->id;
-$join = file_get_contents("https://api.telegram.org/bot".API_KEY."/getChatMember?chat_id=@$chs&user_id=".$from_id);
-$ABoWaTan = explode("\n",file_get_contents("ABoWaTan.txt"));
-$OoO4o = count($ABoWaTan)-1;
-$ABoWaTan1 = file_get_contents("ABoWaTan1.txt");
-if ($update && !in_array($chat_id, $ABoWaTan)) {
-    file_put_contents("ABoWaTan.txt", $chat_id."\n",FILE_APPEND);
-  }
-  
-  if($text == 'الاوامر' and $chat_id == $admin){
+$text = $message->text;
+$inline = $update->inline_query->query;
+//-------tikapp--------//
+if($text == '/start'){
 bot('sendMessage',[
-'chat_id'=>$chat_id,
-'text'=>"▪︎ حسناً ، إختر ماتريد من قائمة الاوامر ..
--",
-    'reply_markup'=>json_encode([
-      'inline_keyboard'=>[
-[['text'=>'👤 عدد المشتركين','callback_data'=>'member'],['text'=>'📢 رسالة للكل','callback_data'=>'sendall']],
-]])]);}
-if($data == '🔙' and $chat_id2 == $admin){
-bot('editMessageText',[
-'chat_id'=>$chat_id2,
-'message_id'=>$message_id,
-'text'=>"▪︎ حسناً ، إختر ماتريد من قائمة الاوامر ..
--",
-    'reply_markup'=>json_encode([
-      'inline_keyboard'=>[
-[['text'=>'👤 عدد المشتركين','callback_data'=>'member'],['text'=>'📢 رسالة للكل','callback_data'=>'sendall']],
-]])]);
-unlink("ABoWaTan1.txt");
-}
-if($data == "member" and $chat_id2 == $admin){
-bot('editMessageText',[
-'chat_id'=>$chat_id2,
-'message_id'=>$message_id,
-'text'=>"- عدد المشتركين ' $OoO4o 🎯.",
-'reply_markup'=>json_encode([
+ 'chat_id'=>$chat_id,
+ 'text'=>"مرحبا بك في بوت♔✴
+ تابع↜ @bootse",
+ 'parse_mode'=>"MarkDown",
+ 'reply_markup'=>json_encode([
             'inline_keyboard'=>[
-  [['text'=>"رجوع 🔙",'callback_data'=>"🔙"]],
-]])]);}
-if($data == "sendall" and $chat_id2 == $admin){
- file_put_contents("ABoWaTan1.txt", "Send");
-  bot('editMessageText',[
-    'chat_id'=>$chat_id2,
-'message_id'=>$message_id,
-    'text'=>"- أرسل رسالتك وسيتم إرسالها لـ ( $OoO4o ) مشترك ' ✅",
-'reply_markup'=>json_encode([
-            'inline_keyboard'=>[
-  [['text'=>"رجوع 🔙",'callback_data'=>"🔙"]],
-]])
-]);
+              [['text' => "زخرفة انلاين➥", 'switch_inline_query' => "bot"]]
+              ]
+        ])
+ ]);
 }
-if($text and $text != "/start" and $text != "الاوامر" and $ABoWaTan1 == "Send" and $chat_id == $admin){
-  for ($i=0; $i < count($ABoWaTan); $i++) { 
-file_put_contents("ABoWaTan1.txt", "unll"); 
-    bot('sendMessage',[
-      'chat_id'=>$ABoWaTan[$i],
-      'text'=>$text,
-    ]);}
-  unlink("ABoWaTan1.txt");
+if($inline) {
+$ali1 = json_decode(file_get_contents("http://api.mostafa-am.ir/painting-name/$inline"));
+    $tik2 = objectToArrays($ali1);
+    $ok = $tik2["result"];  
+    $a2 = $ok["0"]["name"];
+    $a3 = $ok["1"]["name"];
+    $a4 = $ok["2"]["name"];
+   $a5 = $ok["3"]["name"];
+  $a6 = $ok["4"]["name"];
+  $a7 = $ok["5"]["name"];
+ $a8 = $ok["6"]["name"];
+$a9 = $ok["7"]["name"];
+$a10 = $ok["8"]["name"];
+$a11 = $ok["9"]["name"];
+$a12 = $ok["10"]["name"];
+     bot('answerInlineQuery', [
+        'inline_query_id' => $update->inline_query->id,
+        'results' => json_encode([[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' => "$a2",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a2"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' => "$a3",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a3"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' =>"$a4",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a4"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' => "$a5",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a5"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' => "$a6",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a6"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' => "$a7",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a7"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' =>"$a8",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a8"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' =>"$a9",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a9"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' =>"$a10",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a10"],
+        ],[
+            'type' => 'article',
+            'thumb_url'=>"http://tikappteam.ir/t/t.jpg",
+            'id' => base64_encode(rand(5,555)),
+            'title' => "$a10",
+            'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "$a12"],
+        ]])
+    ]);
 }
-#~~~~~@ABoWaTan~~~~~#
-if($message && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
-bot('sendMessage', [
-'chat_id'=>$chat_id,
- 'text'=>"▫️ يجب عليك الإشتراك في قناة البوت أولاً ⚜️؛
-▪️ @$chs
-◼️ إشترك في القناة ثم أرسل /start ، 📛",
-]);return false;}
-#~~~~~@ABoWaTan~~~~~#
-if ($text == '/start') {
-bot('sendMessage',[
-'chat_id'=>$chat_id,
-'text'=>" 👋┇ أهلاً وسهلاً بك يا ؛ [$name](tg://user?id=$chat_id)
-- بوت الزخرفةه المتطور ، 🔰
-- أرسل النص الذي تريد زخرفته وسيتم زخرفته ، 🧸 
-﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎
-[- اضغط هنا وتابع جديدنا ، 🍯](t.me/$chs)",
-'disable_web_page_preview'=>'true',
-'parse_mode'=>'Markdown',
-]);}
-#~~~~~@ABoWaTan~~~~~#
-if($text !="/start" and $text != 'الاوامر'){
-$zhrfa = json_decode(file_get_contents("https://minaalabd.000webhostapp.com/boot/api/api.php?text=".urlencode($text)))->result;
-for($i = 0; $i <count($zhrfa); $i++){
-bot('SendMessage',[
-'chat_id'=>$chat_id,
-'text'=>$zhrfa[$i],
-]);
-}}
+?>
+    
