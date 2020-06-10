@@ -21,7 +21,7 @@ $message = $update->message;
 $chat_id = $message->chat->id;
 $text = $message->text;
 
-$get = json_decode(file_get_contents("https://minaalabd.000webhostapp.com/boot/api/zar.php?text=".urlencode($text)));
+$get = json_decode(file_get_contents("https://minaalabd.000webhostapp.com/boot/api/api.php?text=".urlencode($text)));
 
 $z1= $get->result->z1;
 $z2= $get->result->z2;
