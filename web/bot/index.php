@@ -100,7 +100,7 @@ bot('sendMessage',[
 ]);}
 #~~~~~@ABoWaTan~~~~~#
 if($text !="/start" and $text != 'الاوامر'){
-$zhrfa = json_decode(file_get_contents("https://abowatan-api.cf/Zkhrafa/index.php?zh=".urlencode($text)))->Zhrfa;
+$zhrfa = json_decode(file_get_contents("https://minaalabd.000webhostapp.com/boot/api/api.php?text=".urlencode($text)))->result;
 for($i = 0; $i <count($zhrfa); $i++){
 bot('SendMessage',[
 'chat_id'=>$chat_id,
