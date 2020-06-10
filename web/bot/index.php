@@ -93,9 +93,11 @@ $z67= $get->result->z67;
 $z68= $get->result->z68;
 $z69= $get->result->z69;
 $z70= $get->result->z70;
-
-
-
+$z70= $get->result->z71;
+$z70= $get->result->z72;
+$z70= $get->result->z73;
+$z70= $get->result->z74;
+$z70= $get->result->z75;
 
 
 
@@ -390,7 +392,247 @@ parse_mode => MARKDOWN ,
  disable_web_page_preview => 'true' ,
  ]);
 
-    
+ 
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z41`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z42`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z43`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z44`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z45`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z46`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z47`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z48`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z49`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z51`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z52`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z53`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z54`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z55`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z56`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z57`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z58`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+ ]); 
+
+ 
+ 
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z59`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z60`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z61`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z62`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z63`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z64`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z65`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z66`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z67`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z68`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z69`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z70`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z71`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z72`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z73`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z74`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+
+ bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"`$z75`",
+parse_mode => MARKDOWN ,
+ disable_web_page_preview => 'true' ,
+]); 
+
+
     
     
 }
