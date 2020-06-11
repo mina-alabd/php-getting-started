@@ -2,9 +2,7 @@
 ob_start();
 $API_KEY = "1146216534:AAHUaKVZKBhRiXGBBnkQdpLbpGClw4mf3ZU";
 define('API_KEY',$API_KEY);
-echo "<a href='https://api.telegram.org/bot$API_KEY/setwebhook?url=".$_SERVER['SERVER_NAME']."".$_SERVER['SCRIPT_NAME']."'>setwebhook</a>";
-echo file_get_contents("https://api.telegram.org/bot$API_KEY/setwebhook?url=".$_SERVER['SERVER_NAME']."".$_SERVER['SCRIPT_NAME']);
-
+echo "ayman";
 
 function bot($method,$datas=[]){
 $marcus4 = http_build_query($datas);
